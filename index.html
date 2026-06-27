@@ -63,31 +63,33 @@
             status: "פעיל"
         };
 
-        // נתוני התקדמות של נועם (מומרים מהדוח הישן + עדכונים חדשים)
+        // נתוני התקדמות של נועם (מומרים מהדוח הישן + עדכונים חדשים מהתמונה)
         const progressData = {
             weight: [
                 { date: 'נוכחי', weight: 96 },
             ],
             strength: [
                 { exercise: 'לחיצת חזה', prev: 80, current: 100, reps: '1', sets: '-' },
-                { exercise: 'לחיצת חזה עליון משקולות', prev: 0, current: 30, reps: '6', sets: 'כל יד' }, // חדש
-                { exercise: 'סקוואט / סמית', prev: 17.5, current: 105, reps: '5', sets: '-' }, // 52.5 כל צד = 105 סה"כ. עודכן משקל וחזרות.
-                { exercise: 'פולי עליון מכונה', prev: 57.5, current: 75, reps: '6', sets: '-' }, // עודכן משקל ו-6 חזרות
+                { exercise: 'לחיצת חזה עליון משקולות', prev: 0, current: 30, reps: '6', sets: 'כל יד' },
+                { exercise: 'סקוואט / סמית', prev: 17.5, current: 105, reps: '5', sets: '-' }, 
+                { exercise: 'פולי עליון מכונה', prev: 57.5, current: 80, reps: '6', sets: '-' }, // עודכן לפי התמונה החדשה (80x6)
                 { exercise: 'מקבילים', prev: -14, current: 15, reps: '8', sets: '-' },
-                { exercise: 'דדליפט רומני', prev: 90, current: 130, reps: '7', sets: '-' }, // עודכן ל-130 ו-7 חזרות
-                { exercise: 'האק סקוואט', prev: 220, current: 240, reps: '6', sets: '-' }, // עודכן ל-240 ל-6 חזרות
-                { exercise: 'לחיצת רגליים', prev: 240, current: 270, reps: '6', sets: '-' }, // עודכן ל-270
+                { exercise: 'דדליפט רומני', prev: 90, current: 135, reps: '3', sets: '-' }, // עודכן מה-15.5 (135x3)
+                { exercise: 'האק סקוואט', prev: 220, current: 240, reps: '6', sets: '-' }, 
+                { exercise: 'לחיצת רגליים', prev: 240, current: 270, reps: '6', sets: '-' }, 
                 { exercise: 'פשיטות ברכיים', prev: 60, current: 100, reps: '6', sets: '-' },
-                { exercise: 'חתירה עם מוט', prev: 75, current: 80, reps: '6', sets: '-' }, // עודכן ל-6 חזרות
-                { exercise: 'חתירה טי-בר', prev: 62.5, current: 62.5, reps: '7', sets: '-' },
-                { exercise: 'חתירה רחבה (צד)', prev: 0, current: 52.5, reps: '6', sets: '-' }, // תרגיל חדש שנוסף כעת
-                { exercise: 'כפיפות ברכיים בשכיבה', prev: 14, current: 16, reps: '5', sets: 'פלטות' }, // עודכן ל-16 פלטות ל-5 חזרות
-                { exercise: 'כומר מכונה', prev: 0, current: 40, reps: '8', sets: '-' }, // עודכן ל-8 חזרות
+                { exercise: 'חתירה טי-בר', prev: 62.5, current: 67.5, reps: '6', sets: '-' }, // עודכן לפי התמונה (67.5x6)
+                { exercise: 'חתירה יד אחת', prev: 0, current: 45, reps: '8', sets: '-' }, // חדש מהתמונה
+                { exercise: 'חתירה עם מוט', prev: 75, current: 80, reps: '6', sets: '-' }, 
+                { exercise: 'חתירה רחבה (צד)', prev: 0, current: 52.5, reps: '6', sets: '-' },
+                { exercise: 'כפיפות ברכיים בשכיבה', prev: 14, current: 16, reps: '5', sets: 'פלטות' }, 
+                { exercise: 'כומר מכונה', prev: 40, current: 42.5, reps: '6', sets: '-' }, // עודכן לפי התמונה
                 { exercise: 'קלסו שראגס', prev: 0, current: 20, reps: '8', sets: '-' },
-                { exercise: 'הרחקות כתף אחורית בקרוס', prev: 0, current: 5, reps: '12', sets: '-' }, // תרגיל חדש שנוסף כעת + עודכן ל-12 חזרות
-                { exercise: 'פטישים חבל', prev: 0, current: 25, reps: '6', sets: '-' }, // חדש
-                { exercise: 'לחיצת כתפיים מאחורי הראש', prev: 0, current: 25, reps: '4', sets: 'כל צד' }, // חדש
-                { exercise: 'פרפר קרוס בעמידה', prev: 0, current: 12.5, reps: '6', sets: 'כל צד' } // חדש
+                { exercise: 'סקוואט בולגרי', prev: 0, current: 30, reps: '6', sets: 'כל רגל' }, // חדש מהתמונה
+                { exercise: 'הרחקות כתף אחורית בקרוס', prev: 0, current: 5, reps: '12', sets: '-' }, 
+                { exercise: 'פטישים חבל', prev: 0, current: 25, reps: '6', sets: '-' }, 
+                { exercise: 'לחיצת כתפיים מאחורי הראש', prev: 0, current: 25, reps: '4', sets: 'כל צד' }, 
+                { exercise: 'פרפר קרוס בעמידה', prev: 0, current: 12.5, reps: '6', sets: 'כל צד' }
             ]
         };
 
@@ -627,6 +629,23 @@
                         </div>
                     </div>
                     <i data-lucide="trending-up" class="absolute -bottom-4 -left-4 text-white/10 w-32 h-32 transform rotate-12"></i>
+                </div>
+
+                <!-- חלונית עדכון שיאים אחרונים -->
+                <div class="bg-gradient-to-r from-amber-500/10 to-orange-500/10 border border-amber-500/30 rounded-xl p-4 -mt-2 mb-2 relative overflow-hidden">
+                    <i data-lucide="flame" class="absolute -right-2 -bottom-2 w-16 h-16 text-amber-500/10 transform -rotate-12"></i>
+                    <h3 class="text-sm font-bold text-amber-400 mb-3 flex items-center gap-2 relative z-10">
+                        <i data-lucide="zap" class="w-4 h-4"></i>
+                        סיכום שיאים (PR) אחרונים!
+                    </h3>
+                    <ul class="grid grid-cols-2 gap-y-2 gap-x-4 text-[11px] sm:text-xs text-slate-300 relative z-10">
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>פולי עליון רחב:</b> 80 ק"ג ל-6</li>
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>חתירה טי-בר:</b> 67.5 ק"ג ל-6</li>
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>דדליפט רומני:</b> 135 ק"ג ל-3</li>
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>כומר מכונה:</b> 42.5 ק"ג ל-6</li>
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>חתירה יד אחת:</b> 45 ק"ג ל-8</li>
+                        <li class="flex items-center gap-1.5"><div class="w-1.5 h-1.5 rounded-full bg-amber-500"></div> <b>סקוואט בולגרי:</b> 30 ק"ג ל-6</li>
+                    </ul>
                 </div>
 
                 <div class="bg-slate-800 p-4 rounded-xl border border-slate-700">
